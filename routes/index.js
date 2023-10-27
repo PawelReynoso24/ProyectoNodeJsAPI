@@ -6,6 +6,7 @@ const router = Router();
 // const externalController = require('../controllers/externo/externoController');
 // const aeropuertoAPI1Controller = require('../controllers/aeropuertoAPI1/aeropuertoAPI1Controller');
 // const serviciosSimplesController = require('../controllers/serviciossimples/serviciossimplesController');
+const transaccionesController = require('../controllers/transaccionesController/transaccionesController');
 // //RUTAS
 
 module.exports = (app) => {
@@ -22,6 +23,10 @@ module.exports = (app) => {
     
     // router.post('/api1/ingreso/', aeropuertoAPI1Controller.actualizarVisita);
     // router.post('/api1/servicio/', serviciosSimplesController.actualizarServicio);
+
+    //transacciones
+    router.get('/transacciones/find', transaccionesController.find);
+    router.post('/transacciones/create', transaccionesController.create);
     app.use('/', router);
 
 };
